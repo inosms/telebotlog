@@ -33,9 +33,11 @@ func send(groupName string) error {
 
 	if (info.Mode() & os.ModeCharDevice) == os.ModeCharDevice {
 		return fmt.Errorf("The command is intended to work with pipes.")
-	} else if info.Size() > 0 {
+	} else if info.Size() >= 0 {
 		reader := bufio.NewReader(os.Stdin)
 		redirect(reader, bot, group.Users)
+	} else {
+		fmt.Errorf("Negative size")
 	}
 	return nil
 }
