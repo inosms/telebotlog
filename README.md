@@ -1,13 +1,13 @@
 # telelog
 a simple command for redirecting output from any command to your telegram account.
 
-For Example:
+Each time `telelog` reads a `\n` a new message is sent.
+
+### Examples
 
 `ls /home/magic | telelog send homegroup`
 
 This sends the output of the `ls` command to all receivers listed in homegroup.
-
-Each time `telelog` reads a `\n` a new message is sent.
 
 One could for example use this to start a lengthy process on a remote ssh server and be notified when it is finished.
 
@@ -19,9 +19,21 @@ or simply log the output from a process to your device:
 
 # Usage
 
+## Building
+Get telelog via
+
+`go get github.com/inosms/telelog`
+
+and build it via
+
+`go build github.com/inosms/telelog`
+
+## The Command
+
 At first you have to create your own bot and [obtain an auth token from the @BotFather](https://core.telegram.org/bots).
 
 After this register the bot with
+
 `telelog register TOKEN`.
 
 Now you have to register users. As Telegram bots can not initiate a conversation with a user one has to create an invitation link that the user presses in order to initiate the conversation.
