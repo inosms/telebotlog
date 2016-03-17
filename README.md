@@ -1,5 +1,5 @@
 # telelog
-a simple command for redirecting output from any command to your telegram account.
+a simple command for redirecting output from any command via telegram supporting multiple receivers.
 
 Each time `telelog` reads a `\n` a new message is sent.
 
@@ -7,7 +7,7 @@ Each time `telelog` reads a `\n` a new message is sent.
 
 `ls /home/magic | telelog send homegroup`
 
-This sends the output of the `ls` command to all receivers listed in homegroup.
+This sends the output of the `ls` command to all receivers listed in homegroup via telegram.
 
 One could for example use this to start a lengthy process on a remote ssh server and be notified when it is finished.
 
