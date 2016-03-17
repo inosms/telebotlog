@@ -37,7 +37,7 @@ func send(groupName string) error {
 		reader := bufio.NewReader(os.Stdin)
 		redirect(reader, bot, group.Users)
 	} else {
-		fmt.Errorf("Negative size")
+		return fmt.Errorf("Negative size")
 	}
 	return nil
 }
