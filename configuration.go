@@ -39,7 +39,7 @@ func readConfiguration() (configuration, error) {
 		return configuration{}, err
 	}
 
-	configFilePath := filepath.Join(homeDir, ".telebotlog.conf")
+	configFilePath := filepath.Join(homeDir, ".telelog.conf")
 
 	// https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go
 	if _, err := os.Stat(configFilePath); os.IsNotExist(err) {
@@ -80,7 +80,7 @@ func writeConfiguration(conf configuration) error {
 		return err
 	}
 
-	configFilePath := filepath.Join(homeDir, ".telebotlog.conf")
+	configFilePath := filepath.Join(homeDir, ".telelog.conf")
 
 	f, err := os.Create(configFilePath)
 	if err != nil {
